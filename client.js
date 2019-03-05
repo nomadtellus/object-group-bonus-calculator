@@ -46,7 +46,8 @@ const employees = [
     this.totalCompensation = totalCompensation
     this.totalBonus = totalBonus
   }
-function bonusCalculator(){
+function bonusPerCalculator(){
+  //individual bonus calculation function
   if (reviewRating <= 2){
     bonusPercentage = 0
     }
@@ -73,7 +74,11 @@ function bonusCalculator(){
   }
   return bonusPercentage
 }
-
+function totalBonusCalculator(){
+  totalBonus = (annualSalary * bonusPercentage);
+  Math.round(totalBonus);
+  return totalBonus
+}
 
 
 console.log( bonus( employees ));
