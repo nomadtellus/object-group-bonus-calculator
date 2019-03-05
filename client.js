@@ -46,43 +46,56 @@ const employees = [
     this.totalCompensation = totalCompensation
     this.totalBonus = totalBonus
   }
-function bonusPerCalculator(){
-  //individual bonus calculation function
-  if (reviewRating <= 2){
-    bonusPercentage = 0
+
+  
+
+
+
+
+
+
+
+  function bonusCalcApp(employee){ 
+      if (this.name )
+    
+  
+    function bonusPerCalculator(){
+      //individual bonus calculation function
+      if (reviewRating <= 2){
+        bonusPercentage = 0
+        }
+        else if (reviewRating === 3){
+        bonusPercentage = .04
+      }
+      else if (reviewRating === 4){
+        bonusPercentage = .06
+      }
+      else if (reviewRating === 5){
+        bonusPercentage = .1
+      }
+       if ( employeeNumber.length >= 4){
+        bonusPercentage += .05
+      }
+       if (annualSalary > 65000){
+        bonusPercentage = (bonusPercentage - .01)
+      }
+       if (bonusPercentage > .13){
+        bonusPercentage = .13
+      }
+       if (bonusPercentage < 0){
+        bonusPercentage = 0
+      }
+      return bonusPercentage
     }
-  else if (reviewRating === 3){
-    bonusPercentage = .04
-  }
-  else if (reviewRating === 4){
-    bonusPercentage = .06
-  }
-  else if (reviewRating === 5){
-    bonusPercentage = .1
-  }
-  else if ( employeeNumber.length >= 4){
-    bonusPercentage += .05
-  }
-  else if (annualSalary > 65000){
-    bonusPercentage = (bonusPercentage - .01)
-  }
-  else if (bonusPercentage > .13){
-    bonusPercentage = .13
-  }
-  else if (bonusPercentage < 0){
-    bonusPercentage = 0
-  }
-  return bonusPercentage
-}
-function totalBonusCalc(){
-  totalBonus = (annualSalary * bonusPercentage);
-  Math.round(totalBonus);
-  return totalBonus;
-}
+    function totalBonusCalc(){
+      totalBonus = (annualSalary * bonusPercentage);
+      Math.round(totalBonus);
+      return totalBonus;
+    }
 
-function totalCompensationCalc(){
-  totalCompensation = (annualSalary + totalBonus);
-  return totalCompensation;
+    function totalCompensationCalc(){
+      totalCompensation = (annualSalary + totalBonus);
+      return totalCompensation;
+    }
+  }
 }
-
-console.log( bonus( employees ));
