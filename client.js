@@ -98,4 +98,5 @@ const employees = [
       return totalCompensation;
     }
   }
+  return employee
 }
