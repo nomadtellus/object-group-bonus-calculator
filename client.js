@@ -74,11 +74,15 @@ function bonusPerCalculator(){
   }
   return bonusPercentage
 }
-function totalBonusCalculator(){
+function totalBonusCalc(){
   totalBonus = (annualSalary * bonusPercentage);
   Math.round(totalBonus);
-  return totalBonus
+  return totalBonus;
 }
 
+function totalCompensationCalc(){
+  totalCompensation = (annualSalary + totalBonus);
+  return totalCompensation;
+}
 
 console.log( bonus( employees ));
